@@ -1,5 +1,5 @@
 # baseURL = "localhost"
-baseURL = "siddshashi.github.io/PersonalSite"
+baseURL = "https://siddshashi.github.io"
 title = "johndoe"
 theme = "hugo-coder"
 languageCode = "en"

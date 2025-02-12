@@ -13,14 +13,35 @@
       <link>http://localhost:1313/PersonalSite/about/</link>
       <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/PersonalSite/about/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m an undergrad studying &lt;a href=&#34;https://eecs.berkeley.edu/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EECS&lt;/a&gt; and &lt;a href=&#34;https://french.berkeley.edu/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;French&lt;/a&gt; at UC Berkeley. I&amp;rsquo;m interested in developing tools to bridge communication gaps and transfer ideas, particularly through multimodal models and LLM inference.&lt;/p&gt;&#xA;&lt;p&gt;Last semester, I worked at a stealth robotics startup, where I built and deployed an ultra-low latency ranging system. Before that, I spent time writing software at &lt;a href=&#34;https://rivian.com/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rivian&lt;/a&gt; and conducting research at &lt;a href=&#34;https://bair.berkeley.edu/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BAIR&lt;/a&gt;. Also, for two years, I built software and hardware for autonomous formula-style electric race cars with &lt;a href=&#34;https://ev.studentorg.berkeley.edu/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Formula Electric at Berkeley&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;m an undergrad studying &lt;a href=&#34;https://eecs.berkeley.edu/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EECS&lt;/a&gt; and &lt;a href=&#34;https://french.berkeley.edu/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;French&lt;/a&gt; at UC Berkeley. I&amp;rsquo;m interested in developing tools to bridge communication gaps and transfer ideas, particularly through multimodal models and LLM inference.&lt;/p&gt;&#xA;&lt;p&gt;Last fall, I worked at a stealth robotics startup, where I built and deployed an ultra-low latency ranging system. Before that, I spent time writing software at &lt;a href=&#34;https://rivian.com/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rivian&lt;/a&gt; and conducting ML research at &lt;a href=&#34;https://bair.berkeley.edu/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BAIR&lt;/a&gt;. I also built software and hardware for autonomous formula-style electric race cars at &lt;a href=&#34;https://ev.studentorg.berkeley.edu/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Formula Electric at Berkeley&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Projects</title>
-      <link>http://localhost:1313/PersonalSite/projects/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PersonalSite/projects/</guid>
-      <description>&lt;p&gt;Nothing to see here&amp;hellip; Move along!&lt;/p&gt;</description>
+      <title>Affordable 3D Scene Reconstruction</title>
+      <link>http://localhost:1313/PersonalSite/projects/reconstruction/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/PersonalSite/projects/reconstruction/</guid>
+      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Diffusion-Based Image Denoising and Generation</title>
+      <link>http://localhost:1313/PersonalSite/projects/diffusion/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/PersonalSite/projects/diffusion/</guid>
+      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PintOS</title>
+      <link>http://localhost:1313/PersonalSite/projects/pintos/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/PersonalSite/projects/pintos/</guid>
+      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SpeakEasy</title>
+      <link>http://localhost:1313/PersonalSite/projects/speakeasy/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/PersonalSite/projects/speakeasy/</guid>
+      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

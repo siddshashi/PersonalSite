@@ -1,7 +1,7 @@
 +++
 authors = ["Lone Coder"]
 title = "Diffusion-Based Image Denoising and Generation"
-date = "2023-07-13"
+date = "2024-11-20"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
     "hugo",

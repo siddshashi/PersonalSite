@@ -6,8 +6,22 @@
     <description>Recent content in Syntax on Siddharth Shashi</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/PersonalSite/categories/syntax/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpeakEasy</title>
+      <link>http://localhost:1313/PersonalSite/projects/speakeasy/</link>
+      <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/PersonalSite/projects/speakeasy/</guid>
+      <description>&lt;p&gt;Last fall at CalHacks, UC Berkeley&amp;rsquo;s 2,000+ participant hackathon, my team won 1st place for &amp;ldquo;Best Use of Language AI&amp;rdquo; with SpeakEasy, an AI companion that translates voices while preserving intonation. &lt;a href=&#34;https://github.com/Boomaa23/speak-easy&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Repository&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;&#xA;  Overview&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#overview&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Visiting another country but don&amp;rsquo;t want to sound like a robot? Want to learn a new language but can&amp;rsquo;t get your intonation to sound like other people&amp;rsquo;s? SpeakEasy can make you sound like, well, you!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PintOS</title>
+      <link>http://localhost:1313/PersonalSite/projects/pintos/</link>
+      <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/PersonalSite/projects/pintos/</guid>
+      <description>&lt;p&gt;PintOS is an educational operating system for the x86 CPU architecture which supports multithreading, loading and running user programs, and a file system. As part of our Operating Systems class, my team and I built PintOS over the course of a 5-month long semester. Unfortunately, because this was a project for a university course, I cannot post the code publicly.&lt;/p&gt;&#xA;&lt;h3 id=&#34;argument-passing&#34;&gt;&#xA;  Argument Passing&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#argument-passing&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;First, we extended the barebones Pintos operating system to support argument passing and a robust set of system calls for process management and file operations. Initially, Pintos lacked the ability to handle command-line arguments, which caused many test programs to crash. We implemented argument passing, allowing user processes to correctly receive &lt;code&gt;argc&lt;/code&gt; and &lt;code&gt;argv&lt;/code&gt;, ensuring compatibility with standard command-line conventions.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Affordable 3D Scene Reconstruction</title>
       <link>http://localhost:1313/PersonalSite/projects/reconstruction/</link>
@@ -20,20 +34,6 @@
       <link>http://localhost:1313/PersonalSite/projects/diffusion/</link>
       <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/PersonalSite/projects/diffusion/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>PintOS</title>
-      <link>http://localhost:1313/PersonalSite/projects/pintos/</link>
-      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PersonalSite/projects/pintos/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>SpeakEasy</title>
-      <link>http://localhost:1313/PersonalSite/projects/speakeasy/</link>
-      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/PersonalSite/projects/speakeasy/</guid>
       <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,7 +1,7 @@
 +++
 authors = ["Lone Coder"]
 title = "SpeakEasy"
-date = "2023-07-13"
+date = "2024-10-23"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
     "hugo",
@@ -17,152 +17,72 @@ series = ["Theme Demo"]
 aliases = ["migrate-from-jekyl"]
 +++
 
-This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
+Last fall at CalHacks, UC Berkeley's 2,000+ participant hackathon, my team won 1st place for "Best Use of Language AI" with SpeakEasy, an AI companion that translates voices while preserving intonation. [GitHub Repository][ghlink]
 
-<!--more-->
+## Overview
 
-## Headings
+Visiting another country but don't want to sound like a robot? Want to learn a new language but can't get your intonation to sound like other people's? SpeakEasy can make you sound like, well, you!
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+## Features
 
-# H1
+SpeakEasy is an AI language companion which centers around localizing your own voice into other languages.
 
-## H2
+If, for example, you wanted to visit another country but didn't want to sound like a robot or Google Translate, you could still talk in your native language. SpeakEasy can then automatically repeat each statement in the target language in exactly the intonation you would have if you spoke that language.
 
-### H3
+Say you wanted to learn a new language but couldn't quite get your intonation to sound like the source material you were learning from. SpeakEasy is able to provide you phrases in your own voice so you know exactly how your intonation should sound.
 
-#### H4
+## Background
 
-##### H5
+SpeakEasy is the product of a group of four UC Berkeley students. For all of us, this is our first submission to a hackathon and the result of several years of wanting to get together to create something cool together. We are excited to present every part of SpeakEasy; from the remarkably accurate AI speech to just how much we've all learned about rapidly developed software projects.
 
-###### H6
+### Inspiration
 
-## Paragraph
+Our group started by thinking of ways we could make an impact. We then expanded our search to include using and demonstrating technologies developed by CalHacks' generous sponsors, as we felt this would be a good way to demonstrate how modern technology can be used to help everyday people.
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+In the end, we decided on SpeakEasy and used Cartesia to realize many of the AI-powered functions of the application. This enabled us to make something which addresses a specific real-world problem (robotic-sounding translations) many of us have either encountered or are attempting to avoid.
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+### Accomplishments/Learnings
 
-## Links
+We are proud to say that despite the many challenges we accomplished a great deal with this project. We have a fully functional Flask backend with React frontend (see "Technical Details") which uses multiple different APIs. This project successfully ties together audio processing, asynchonrous communication, artificial intelligence, UI/UX design, database management, and so much more. What's more is that many of our group members learned this from base fundamentals.
 
-This is a [internal link](/posts/emoji-support) to another page. [This one](https://www.gohugo.io) points to a external page nad will be open in a new tag.
+## Technical Details
 
-## Blockquotes
+As mentioned in an earlier section, SpeakEasy is designed with a Flask (Python) backend and React (JavaScript) frontent. This is a very standard setup that is used often at hackathons due to its easy implementation and relatively limited required setup. Flask only requires two lines of code to make an entirely new endpoint, while React can make a full audio-playing page with callbacks that looks absolutely beautiful in less than an hour. For storing data, we use SQLAlchemy (backed by SQLite).
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+1. When a user opens SpeakEasy, they are first sent to a landing page.
+2. After pressing any key, they are taken to a training screen. Here they will record a 15-20 second message (ideally the one shown on screen) which will be used to create an embedding. This is accomplished with the Cartesia "Clone Voice from Clip" endpoint. A Cartesia Voice (abbreviated as "Voice") is created from the returned embedding (using the "Create Voice" endpoint) which contains a Voice ID. This Voice ID is used to uniquely identify each voice, which itself is in a specific language. The database then stores this voice and creates a new user which this voice is associated with.
+3. When the recording is complete and the user clicks "Next", they will be taken to a split screen where they can choose between the two main program functions of SpeakEasy.
+4. If the user clicks on the vocal translation route, they will be brought to another recording screen. Here, they record a sound in English which is then sent to the backend. The backend encodes this MP3 data into PCM, sends it to a speech-to-text API, and then transfers it into a text translation API. Separately, the backend trains a new Voice (using the Cartesia Localize Voice endpoint, wrapped by get/create Voice since Localize requires an embedding instead of a Voice ID) with the intended target language and uses the Voice ID it returns. The backend then sends the translated text to the Cartesia "Text to Speech (Bytes)" endpoint using this new Voice ID. This is then played back to the user as a response to the original backend request. All created Voices are stored in the database and associated with the current user. This is done so returning users do not have to retrain their voices in any language.
+5. If the user clicks on the language learning route, they will be brought to a page which displays a randomly selected phrase in a certain language. It will then query the Cartesia API to pronounce that phrase in that language, using the preexisting Voice ID if available (or prompting to record a new phrase if not). A request is made to the backend to input some microphone input, which is then compared to Cartesia's estimation of your speech in a target language. The backend then returns a set of feedback using the difference between the two pronounciations, and displays that to the user on the frontend.
+6. After each route is selected, the user may choose to go back and select either route (the same route again or the other route).
 
-#### Blockquote without attribution
+## Cartesia Issues
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use _Markdown syntax_ within a blockquote.
+We were very impressed with Cartesia and its abilities, but noted a few issues which would improve the development experience.
 
-#### Blockquote with attribution
+- Clone Voice From Clip endpoint documentation
+    - The documentation for the endpoint in question details a `Response` which includes a variety of fields: `id`, `name`, `language`, and more. However, the endpoint only returns the embedding in a dictonary. It is then required to send the embedding into the "Create Voice" endpoint to create an `id` (and other fields), which are required for some further endpoints.
+- Clone Voice From Clip endpoint length requirements
+    - The clip supplied to the endpoint in question appears to require a duration of greater than a second or two. Se "Error reporting" for further details.
+- Text to Speech (Bytes) endpoint output format
+    - The TTS endpoint requires an output format be specified. This JSON object notably lacks an `encoding` field in the MP3 configuration which is present for the other formats (raw and WAV). The solution to this is to send an `encoding` field with the value for one of the other two formats, despite this functionally doing nothing.
+- Embedding format
+    - The embedding is specified as a list of 192 numbers, some of which may be negative. Python's JSON parser does not like the dash symbol and frequently encounters issues with this. If possible, it would be good to either allow this encoding to be base64 encoded, hashed, or something else to prevent negatives. Optimally embeddings do not have negatives, though this seems difficult to realize.
+- Response code mismatches
+    - Some response codes returned from endpoints do not match their listed function. For example, a response code of 405 should not be returned when there is a formatting error in the request. Similarly, 400 is returned before 404 when using invalid endpoints, making it difficult to debug. There are several other instances of this but we did not collate a list.
+- Error reporting
+    - If (most) endpoints return in JSON format, errors should also be turned in JSON format. This prevents many parsing issues and would simplify design. In addition, error messages are too vague to glean any useful information. For example, 500 is always "Bad request" regardless of the underlying error cause. This is the same thing as the error name.
 
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
+## Future Improvements
 
-## Tables
+In the future, it would be interesting to investigate the following:
+- Proper authentication
+- Cloud-based database storage (with redundancy)
+- Increased error checking
+- Unit and integration test coverage, with CI/CD
+- Automatic recording quality analysis
+- Audio streaming (instead of buffering) using WebSockets
+- Mobile device compatibility
+- Reducing audio processing overhead
 
-Tables aren't part of the core Markdown spec, but Hugo supports them out-of-the-box.
-
-| Name  | Age |
-| ----- | --- |
-| Bob   | 27  |
-| Alice | 23  |
-
-#### Inline Markdown within tables
-
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-
-## Code Blocks
-
-#### Code block with backticks
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Example HTML5 Document</title>
-    </head>
-    <body>
-        <p>Test</p>
-    </body>
-</html>
-```
-
-#### Code block indented with four spaces
-
-    <!doctype html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <title>Example HTML5 Document</title>
-    </head>
-    <body>
-      <p>Test</p>
-    </body>
-    </html>
-
-#### Code block with Hugo's internal highlight shortcode
-
-{{< highlight html >}}
-
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Example HTML5 Document</title>
-</head>
-<body>
-  <p>Test</p>
-</body>
-</html>
-{{< /highlight >}}
-
-## List Types
-
-#### Ordered List
-
-1. First item
-2. Second item
-3. Third item
-
-#### Unordered List
-
--   List item
--   Another item
--   And another item
-
-#### Nested list
-
--   Fruit
-    -   Apple
-    -   Orange
-    -   Banana
--   Dairy
-    -   Milk
-    -   Cheese
-
-#### Foot Notes
-
-Check it[^2] at the end[^3] of this text[^4].
-
-## Other Elements — abbr, sub, sup, kbd, mark
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-[^2]: A footnote.
-[^3]: Another one.
-[^4]: Cool, right?
+[ghlink]: https://github.com/Boomaa23/speak-easy

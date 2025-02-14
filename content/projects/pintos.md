@@ -17,7 +17,7 @@ series = ["Theme Demo"]
 aliases = ["migrate-from-jekyl"]
 +++
 
-PintOS is an educational operating system for the x86 CPU architecture which supports multithreading, loading and running user programs, and a file system. As part of our Operating Systems class, my team and I built PintOS over the course of a 5-month long semester. Unfortunately, because this was a project for a university course, I cannot post the code publicly. 
+PintOS is an educational operating system for the x86 CPU architecture which supports multithreading, loading and running user programs, and a file system. As part of our OS class, my team and I built PintOS over the course of a 5-month long semester. Unfortunately, because this was a project for a university course, I cannot post the code publicly. 
 
 ### Argument Passing
 

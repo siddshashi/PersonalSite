@@ -17,7 +17,7 @@ series = ["Theme Demo"]
 aliases = ["migrate-from-jekyl"]
 +++
 
-With my DJI Tello Drone, I collected video footage of my bedroom interior and created a 3D reconstruction of it using Gaussian splatting. Then, analyzing the reconstruction's point cloud, I found holes in the reconstruction. From those holes, I collected additional video footage with my drone and refined my 3D reconstruction. [GitHub Link][ghlink]
+With my DJI Tello Drone, I collected video footage of my bedroom interior and created a 3D reconstruction of it using Gaussian splatting. Then, analyzing the reconstruction's point cloud, I found holes in the reconstruction. From those holes, I collected additional video footage with my drone and refined my 3D reconstruction. [GitHub][ghlink]
 
 ## Problem 
 

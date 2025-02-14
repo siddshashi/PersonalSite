@@ -151,7 +151,7 @@
       </h1>
     </header>
 
-    <p>Using an image diffusion model, I implemented an iterative denoising process and classifier-free guidance to generate prompt-based images. Sampling from the model, I performed image-to-image translation, editing and hallucination on top of hand-drawn images and inpainting in erased sections of images. I then implemented <a href="https://dangeng.github.io/visual_anagrams/"  class="external-link" target="_blank" rel="noopener">visual anagrams</a>, optical illusions where the generated images corresponded to different prompts depending on the viewing angle. Finally, I similarly implemented <a href="https://arxiv.org/abs/2404.11615"  class="external-link" target="_blank" rel="noopener">factorized diffusion</a>, illusions where the viewing distance corresponds to different prompts.</p>
+    <p>Using an image diffusion model, I implemented an iterative denoising process and classifier-free guidance to generate prompt-based images. Sampling from the model, I performed image-to-image translation, editing and hallucination on top of hand-drawn images and inpainting in erased sections of images. I then implemented <a href="https://dangeng.github.io/visual_anagrams/"  class="external-link" target="_blank" rel="noopener">visual anagrams</a>, optical illusions where the generated images corresponded to different prompts depending on the viewing angle. Finally, I similarly implemented <a href="https://arxiv.org/abs/2404.11615"  class="external-link" target="_blank" rel="noopener">factorized diffusion</a>, illusions where the viewing distance corresponds to different prompts. <a href="https://github.com/siddshashi/HybridDiffusion"  class="external-link" target="_blank" rel="noopener">GitHub</a></p>
 <h2 id="setup">
   Setup
   <a class="heading-link" href="#setup">
@@ -175,6 +175,7 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<p>In the previous section, some of the generated images lacked coherence or produced unrealistic results. To significantly improve image quality while sacrificing some diversity, I employed a technique known as Classifier-Free Guidance (CFG). This approach helps steer the image generation process toward more faithful and detailed results. To implement this, I modified my iterative denoising function to incorporate CFG by running the diffusion model twice—once with the text prompt and once with an empty prompt.</p>
 <h2 id="sampling">
   Sampling
   <a class="heading-link" href="#sampling">
@@ -182,6 +183,8 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<p>Following the <a href="https://sde-image-editing.github.io/"  class="external-link" target="_blank" rel="noopener">SDEdit Algorithm</a>, I took an original test image, noised it a little, and forced it back onto the image manifold without any conditioning. For the prompt to follow, I provided &ldquo;a high quality photo.&rdquo; Effectively, this gave me an image that is similar to the test image (with a low-enough noise level). I then tried using different guidance prompts like &ldquo;a rocket ship&rdquo;, and saw the guidance level vary depending on the noise.</p>
+<p>I also experimented with starting with hand-drawn images, projecting some quick sketches onto the natural image manifold. With more noise, there was evidently more hallucination, and I found that with too much the generated image would look nothing like what I intended. Finally, I implemented the results of the <a href="https://arxiv.org/abs/2201.09865"  class="external-link" target="_blank" rel="noopener">RePaint Paper</a>. That is, given an image <code>x</code>, and a binary mask <code>m</code>, I creatd a new image that has the same content where <code>x</code> is 0, but new content wherever <code>m</code> is 1.</p>
 <h2 id="visual-anagrams">
   Visual Anagrams
   <a class="heading-link" href="#visual-anagrams">
@@ -189,6 +192,8 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<p>For creating a visual anagram, I found that results turned out well when I tried to create an image that looks like &ldquo;an oil painting of people around a campfire&rdquo;, but when flipped upside down reveals &ldquo;an oil painting of an old man&rdquo;.</p>
+<p>To do this, I denoised an image <code>xt</code> at step <code>t</code> normally with the prompt &ldquo;an oil painting of an old man&rdquo;, to obtain noise estimate <code>e1</code>. But at the same time, I flipped <code>xt</code> upside down, and denoised with the prompt &ldquo;an oil painting of people around a campfire&rdquo;, to get noise estimate <code>e2</code>. I then flipped <code>xt</code> back, to make it right-side up, and averaged the two noise estimates. Finally, I then performed a reverse/denoising diffusion step with the averaged noise estimate.</p>
 <h2 id="hybrid-images">
   Hybrid Images
   <a class="heading-link" href="#hybrid-images">
@@ -196,6 +201,7 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<p>For creating hybrid images, I took a similar approach to visual anagrams by combining two types of noise into one estimate. To obtain <code>e1</code>, I used a low pass filter on the image, and to obtain <code>e2</code> I used a high pass. Because these noises correspond to different frequencies, I just added them together to get the total estimate. The prompts &ldquo;a lithograph of a skull&rdquo; and &ldquo;a lithograph of waterfalls&rdquo; turned out really cool!</p>
 
   </article>
 </section>

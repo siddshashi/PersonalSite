@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/PersonalSite/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=PersonalSite/livereload" data-no-instant defer></script>
+  <title>
+  Messing with Image Diffusion · Siddharth Shashi
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Siddharth Shashi">
+<meta name="description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Messing with Image Diffusion">
+  <meta name="twitter:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+
+<meta property="og:url" content="http://localhost:1313/PersonalSite/projects/hybrid_diffusion/">
+  <meta property="og:site_name" content="Siddharth Shashi">
+  <meta property="og:title" content="Messing with Image Diffusion">
+  <meta property="og:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2024-10-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-05T00:00:00+00:00">
+    <meta property="article:tag" content="Hugo">
+    <meta property="article:tag" content="Markdown">
+    <meta property="article:tag" content="Css">
+    <meta property="article:tag" content="Html">
+      <meta property="og:see_also" content="http://localhost:1313/PersonalSite/projects/reconstruction/">
+      <meta property="og:see_also" content="http://localhost:1313/PersonalSite/projects/denoiser_diffusion/">
+      <meta property="og:see_also" content="http://localhost:1313/PersonalSite/projects/speakeasy/">
+      <meta property="og:see_also" content="http://localhost:1313/PersonalSite/projects/pintos/">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/PersonalSite/projects/hybrid_diffusion/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/PersonalSite/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/PersonalSite/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/PersonalSite/">
+      Siddharth Shashi
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/PersonalSite/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/PersonalSite/projects/">Projects</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/PersonalSite/projects/hybrid_diffusion/">
+          Messing with Image Diffusion
+        </a>
+      </h1>
+    </header>
+
+    <p>Using an image diffusion model, I implemented an iterative denoising process and classifier-free guidance to generate prompt-based images. Sampling from the model, I performed image-to-image translation, editing and hallucination on top of hand-drawn images and inpainting in erased sections of images. I then implemented <a href="https://dangeng.github.io/visual_anagrams/"  class="external-link" target="_blank" rel="noopener">visual anagrams</a>, optical illusions where the generated images corresponded to different prompts depending on the viewing angle. Finally, I similarly implemented <a href="https://arxiv.org/abs/2404.11615"  class="external-link" target="_blank" rel="noopener">factorized diffusion</a>, illusions where the viewing distance corresponds to different prompts.</p>
+<h2 id="setup">
+  Setup
+  <a class="heading-link" href="#setup">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>For my project, I explored the DeepFloyd IF diffusion model, a state-of-the-art text-to-image model trained by Stability AI. The project involved working with the two-stage DeepFloyd pipeline, where the first stage generated low-resolution images, and the second stage upsampled them to higher resolutions. Throughout the process, I generated images using provided and custom text prompts, evaluating how different inference step values affected image quality.</p>
+<h2 id="implementing-denoising">
+  Implementing Denoising
+  <a class="heading-link" href="#implementing-denoising">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>A major part of the project involved implementing and modifying the diffusion process. I first wrote a forward process function to simulate the addition of noise to an image over time, demonstrating how a clean image degrades into pure noise. Then, I applied classical Gaussian filtering techniques to denoise images, comparing their effectiveness to DeepFloyd’s pretrained denoising UNet. I also implemented iterative denoising using a strided timestep approach, which improved image reconstruction quality while reducing computational cost. Finally, I experimented with diffusion-based image generation, creating high-quality images from pure noise using the model’s iterative denoising capabilities.</p>
+<h2 id="classifier-free-guidance-cfg">
+  Classifier-free Guidance (CFG)
+  <a class="heading-link" href="#classifier-free-guidance-cfg">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h2 id="sampling">
+  Sampling
+  <a class="heading-link" href="#sampling">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h2 id="visual-anagrams">
+  Visual Anagrams
+  <a class="heading-link" href="#visual-anagrams">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h2 id="hybrid-images">
+  Hybrid Images
+  <a class="heading-link" href="#hybrid-images">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     Siddharth Shashi 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/PersonalSite/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

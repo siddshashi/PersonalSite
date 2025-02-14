@@ -1,6 +1,6 @@
 +++
 authors = ["Lone Coder"]
-title = "Diffusion-Based Image Denoising and Generation"
+title = "Diffusion-Based Image Denoising"
 date = "2024-11-20"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
@@ -17,7 +17,6 @@ series = ["Theme Demo"]
 aliases = ["migrate-from-jekyl"]
 +++
 
-This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
 
 <!--more-->
 

@@ -17,7 +17,7 @@ series = ["Theme Demo"]
 aliases = ["migrate-from-jekyl"]
 +++
 
-Last fall at CalHacks, UC Berkeley's 2,000+ participant hackathon, my team won 1st place for "Best Use of Language AI" with SpeakEasy, an AI companion that translates voices while preserving intonation. [GitHub Repository][ghlink]
+Last fall at CalHacks, UC Berkeley's 2,000+ participant hackathon, my team won 1st place for "Best Use of Language AI" for building SpeakEasy, an AI companion that translates voices while preserving intonation. [GitHub Repository][ghlink]
 
 ## Overview
 

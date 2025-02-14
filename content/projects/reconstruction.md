@@ -73,7 +73,7 @@ Given a centroid location, I needed a way to make my drone collect footage at an
 
 To synchronize my drone's actual location with where I want it to be in my coordinate space, I placed a piece of tape at the center of my room by measuring the midpoints of the length and width of the room. This center served as the center of the drone paths and I was able to represent this as a coordinate in the point cloud by taking the midpoint along the walls of the room. While there was no active SLAM taking place in this project, I hope to extend this project further by implementing SLAM and remove the need to calibrate in such a way. 
 
-### Results
+## Results
 
 As can be seen from the images of my reconstruction of a hole in the scene, I was able to create a more realistic representation with more footage, similar to that of the well-reconstructed corners in the original reconstruction. 
 
@@ -81,7 +81,7 @@ As can be seen from the images of my reconstruction of a hole in the scene, I wa
 
 As I touched on before, I do plan on investigating a better approach to targeting a particular location in the room with camera intrinsics and using SLAM to know where exactly the drone is in the room relative to everything else. But beyond that, the investigations in this project left me wondering about a few more questions that I want to explore. Namely, what is the best way to detect places in need of refinement in a point cloud? I was just using local sparsity, but I can imagine that this would fail to pick up incorrect representations -- it only finds non-existent ones. Also, what would the most ideal flight path be for surveying the room? What if I used object detection to plan such a path? But even then, how could I plan an ideal path given some objects I want to capture? Finally, I want to objectively rate my effectiveness of reconstruction against other techniques like LiDAR and photogrammetry to see if this could actually hold value in real-world reconstructions. 
 
-### Conclusion
+## Conclusion
 
 This was a great learning opportunity for me, intersecting my interest in drone vision with real-world use cases. I'm proud of myself for demonstrating the potential of leveraging accessible and affordable tools to tackle complex problems in 3D reconstruction, with far-reaching applications across defense, security, and numerous other industries. By utilizing a low-cost DJI Tello drone and an innovative workflow integrating Gaussian reconstruction and point cloud manipulation, this work lays the foundation for a future where precise, real-time scene mapping is achievable for anyone. 
 

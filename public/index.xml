@@ -30,6 +30,34 @@
       <description>&lt;p&gt;Using convolutional, downsampling, and upsampling blocks in a UNet, I built a denoiser for handwritten digits. For the denoising process, I incorporated timestep conditioning using fully connected layers to iteratively denoise images over 20 epochs. I then extended the UNet with class-conditioning and classifier-free guidance, enabling flexible and accurate generation. &lt;a href=&#34;https://github.com/siddshashi/DiffusionDenoising&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;[Remaining content is WIP]&lt;/p&gt;</description>
     </item>
     <item>
+      <title>DroneTracker</title>
+      <link>http://localhost:1313/PersonalSite/projects/dronetracker/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/PersonalSite/projects/dronetracker/</guid>
+      <description>&lt;p&gt;Using convolutional, downsampling, and upsampling blocks in a UNet, I built a denoiser for handwritten digits. For the denoising process, I incorporated timestep conditioning using fully connected layers to iteratively denoise images over 20 epochs. I then extended the UNet with class-conditioning and classifier-free guidance, enabling flexible and accurate generation. &lt;a href=&#34;https://github.com/siddshashi/DiffusionDenoising&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;[Remaining content is WIP]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MapReduce</title>
+      <link>http://localhost:1313/PersonalSite/projects/map_reduce/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/PersonalSite/projects/map_reduce/</guid>
+      <description>&lt;p&gt;Using convolutional, downsampling, and upsampling blocks in a UNet, I built a denoiser for handwritten digits. For the denoising process, I incorporated timestep conditioning using fully connected layers to iteratively denoise images over 20 epochs. I then extended the UNet with class-conditioning and classifier-free guidance, enabling flexible and accurate generation. &lt;a href=&#34;https://github.com/siddshashi/DiffusionDenoising&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;[Remaining content is WIP]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>REGULUS</title>
+      <link>http://localhost:1313/PersonalSite/projects/regulus/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/PersonalSite/projects/regulus/</guid>
+      <description>&lt;p&gt;Using convolutional, downsampling, and upsampling blocks in a UNet, I built a denoiser for handwritten digits. For the denoising process, I incorporated timestep conditioning using fully connected layers to iteratively denoise images over 20 epochs. I then extended the UNet with class-conditioning and classifier-free guidance, enabling flexible and accurate generation. &lt;a href=&#34;https://github.com/siddshashi/DiffusionDenoising&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;[Remaining content is WIP]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shell</title>
+      <link>http://localhost:1313/PersonalSite/projects/shell/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/PersonalSite/projects/shell/</guid>
+      <description>&lt;p&gt;Using convolutional, downsampling, and upsampling blocks in a UNet, I built a denoiser for handwritten digits. For the denoising process, I incorporated timestep conditioning using fully connected layers to iteratively denoise images over 20 epochs. I then extended the UNet with class-conditioning and classifier-free guidance, enabling flexible and accurate generation. &lt;a href=&#34;https://github.com/siddshashi/DiffusionDenoising&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;[Remaining content is WIP]&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>SpeakEasy</title>
       <link>http://localhost:1313/PersonalSite/projects/speakeasy/</link>
       <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>

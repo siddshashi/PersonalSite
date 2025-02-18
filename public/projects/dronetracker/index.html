@@ -29,8 +29,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="projects">
-    <meta property="article:published_time" content="2024-11-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-11-20T00:00:00+00:00">
+    <meta property="article:published_time" content="2024-07-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-07-14T00:00:00+00:00">
     <meta property="article:tag" content="Hugo">
     <meta property="article:tag" content="Markdown">
     <meta property="article:tag" content="Css">
@@ -41,6 +41,7 @@
       <meta property="og:see_also" content="http://localhost:1313/PersonalSite/projects/regulus/">
       <meta property="og:see_also" content="http://localhost:1313/PersonalSite/projects/shell/">
       <meta property="og:see_also" content="http://localhost:1313/PersonalSite/projects/speakeasy/">
+      <meta property="og:see_also" content="http://localhost:1313/PersonalSite/projects/hybrid_diffusion/">
 
 
 
@@ -153,8 +154,51 @@
       </h1>
     </header>
 
-    <p>Using convolutional, downsampling, and upsampling blocks in a UNet, I built a denoiser for handwritten digits. For the denoising process, I incorporated timestep conditioning using fully connected layers to iteratively denoise images over 20 epochs. I then extended the UNet with class-conditioning and classifier-free guidance, enabling flexible and accurate generation. <a href="https://github.com/siddshashi/DiffusionDenoising"  class="external-link" target="_blank" rel="noopener">GitHub</a></p>
-<p>[Remaining content is WIP]</p>
+    <p>Last summer, I was invited to the AGI House AI Robotics Hackathon, an exclusive event in Silicon Valley that brought together over 500 engineers from around the world. My team and I won 2nd place for developing DroneTracker, a real-time person-tracking system using the DJI Tello&rsquo;s Python SDK. <a href="https://github.com/AntonioMacaronio/Drone-Robotics"  class="external-link" target="_blank" rel="noopener">GitHub</a></p>
+<h2 id="motivation">
+  Motivation
+  <a class="heading-link" href="#motivation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This project tackles the challenge of low-cost autonomous target tracking, a problem relevant to military reconnaissance and search-and-rescue operations. High-risk scenarios often involve soldiers or first responders navigating unfamiliar and potentially dangerous environments. DroneTracker serves as an initial step toward an alternative approach—if a low-cost drone can map and track a scene in real time, why risk human lives unnecessarily?</p>
+<h2 id="overview">
+  Overview
+  <a class="heading-link" href="#overview">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Our end-to-end pipeline consists of the following steps:</p>
+<ol>
+<li>Real-time video input from the drone’s RGB camera</li>
+<li>Pose estimation using a MobileNet-based U-Net</li>
+<li>Control to adjust the drone’s position</li>
+</ol>
+<p>By leveraging a lightweight deep-learning model, we achieved latency under 20ms per frame, enabling real-time tracking and responsive drone movement.</p>
+<h3 id="pose-calculation">
+  Pose Calculation
+  <a class="heading-link" href="#pose-calculation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>We use MobileNet, a U-Net-based deep-learning model trained on human poses. This architecture is optimized for speed and efficiency, making it ideal for real-time tracking on edge devices. The model detects key facial and body landmarks, including eyebrows, nose, shoulders, neck, as well as positional data relative to the camera&rsquo;s field of view. These points inform the drone’s movement to maintain the subject at the center of the frame.</p>
+<h3 id="control">
+  Control
+  <a class="heading-link" href="#control">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>DroneTracker continuously adjusts its flight path based on the detected pose:</p>
+<ol>
+<li>Rotation: Adjusted based on the nose position relative to the image center</li>
+<li>Vertical movement: Controlled by the distance between the horizontal bisector and the nose position</li>
+<li>Horizontal movement: Determined by the pixel distance between the neck and nose</li>
+</ol>
+<p>This enables smooth and autonomous tracking of a moving target with minimal drift.</p>
 
   </article>
 </section>

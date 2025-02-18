@@ -27,9 +27,7 @@ The project addresses the challenge of creating accurate 3D reconstructions of r
 
 With ongoing wars, specifically those breaking large news stories in Ukraine and Israel/Palestine, I've been interested in how engineers are building solutions to save mercilessly-lost lives. I firmly believe that as an engineer, I have power to build tools that impact lives, and the defense sector is a place in which I can to do so directly and on a large scale.  
 
-As I understand, the most dangerous military operations today involve soldiers traversing through unknown closed corners. With this project I'm attempting to build the groundwork for a solution -- if a scene can be mapped out by a cheap drone, why would a person ever have to venture inside? 
-
-And beyond defense, the ability to survey a scene at a high resolution while keeping cost low has huge applications in security, agriculture, architectural preservation, urban planning, AR/VR, and so much more. Imagine a personal bodyguard that flies around people who need protection. Or maybe a poaching detector surveying an African safari. Drone vision will lead the future of these spaces, and with this project I want to be a driving force in the ensuing disruption. 
+The ability to survey a scene at a high resolution while keeping cost low has huge applications in defense, security, agriculture, architectural preservation, urban planning, AR/VR, and so much more. Imagine a personal bodyguard that flies around people who need protection. Or maybe a poaching detector surveying an African safari. Drone vision will lead the future of these spaces, and with this project I want to be a driving force in the ensuing disruption. 
 
 ### Current Solutions and their Limitations
 

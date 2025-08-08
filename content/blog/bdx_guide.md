@@ -17,9 +17,9 @@ series = ["Theme Demo"]
 aliases = ["migrate-from-jekyl"]
 +++
 
-## Introduction
-
----
+During the spring semester of 2025, I continued my French Language and Culture studies at the University of Bordeaux Montaigne as part of an exchange program with Berkeley. 
+This blog post explores what I did outside of the classroom during my semester, and provides a guide for anyone wishing to also spend some time experiencing the 
+colorfully wine-soaked and relaxingly beautiful city of Bordeaux.  
 
 ## Mes Échappées (My Escapes)
 
@@ -88,11 +88,9 @@ aliases = ["migrate-from-jekyl"]
 ### Musée d'Aquitaine  
 *Something you learned that stuck with you.*
 
----
 
 ## Final Thoughts
 
 *Reflect on Bordeaux overall — the rhythm of the city, what surprised you, what you'd return for, or what you'd recommend to fellow travelers.*
 
----
 

@@ -179,6 +179,11 @@ name = "Projects"
 weight = 2
 url = "projects/"
 
+[[languages.en.menu.main]]
+name = "Blog"
+weight = 3
+url = "blog/"
+
 
 # [languages.pt-br]
 # languageName = ":brazil:"

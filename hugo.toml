@@ -147,11 +147,17 @@ icon = "fa-brands fa-github fa-2x"
 weight = 2.5
 url = "https://github.com/siddshashi"
 
+# [[params.social]]
+# name = "LinkedIn"
+# icon = "fa-brands fa-linkedin fa-2x"
+# weight = 3.5
+# url = "https://www.linkedin.com/in/siddharth-shashi-68bb9a197/"
+
 [[params.social]]
-name = "LinkedIn"
-icon = "fa-brands fa-linkedin fa-2x"
+name = "Goodreads"
+icon = "fa-brands fa-goodreads fa-2x"
 weight = 3.5
-url = "https://www.linkedin.com/in/siddharth-shashi-68bb9a197/"
+url = "https://www.goodreads.com/user/show/148149746-sid-shashi"
 
 [[params.social]]
 name = "Flickr"
